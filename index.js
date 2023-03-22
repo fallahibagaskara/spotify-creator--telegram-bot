@@ -55,29 +55,29 @@ bot.on(/^\/spotifybulk (.+)$/, (msg, props) => {
             try {
                 a++;
                 
-                var email = `${randstr(5)}@ssssaasasa.me`; // change domain here
+                var email = `${randstr(5)}@indomilk.me`; // change domain here
                 // var password = `${randstr(8)}`; // change password here
                 var password = "masukajaya"; // change password here
                 
                 console.log(`[${a}] Registering ${email} | ${password}`);
                 const cacah = email.split("@");
-                const createspotify = await spotify(`birth_day=11&name=${cacah[0]}&gender=neutral&birth_year=1995&platform=Android-ARM&email=${email}&creation_point=client_mobile&password=${password}&password_repeat=${password}&iagree=true&birth_month=4&key=a2d4b979dc624757b4fb47de483f3505`);
+                const createspotify = await spotify(`birth_day=11&name=${cacah[0]}&gender=neutral&birth_year=1995&platform=Android-ARM&email=${email}&creation_point=client_mobile&password=${password}&password_repeat=${password}&iagree=true&birth_month=4&key=142b583129b2df829de3656f9eb484e6`);
                 if (createspotify.status == 1) {
                     console.log(`[${a}] Account created successfully!`);
                     msg.reply.text(`[${a}] Success! ${email} | ${password}`);
 
-                    // fs.appendFileSync('Account_Created.txt', `${email} | ${password}\n`);
-                    if (a == jumlah) {
-                        msg.reply.text(`Done, ${jumlah} Spotify account created successfully!`);
-                        break;
-                    }
+                    fs.appendFileSync('Account_Created.txt', `${email} | ${password}\n`);
+
                     for (i = 0; i < 5; i++) {
                             await delay(2000);
                             break;
                         }
-
+                        if (a == jumlah) {
+                            msg.reply.text(`Done, ${jumlah} Spotify account created successfully!`);
+                            break;
+                        }
                 } else {
-                    console.log(`[${a}] ${JSON.stringify(createspotify)} \n`);
+                    console.log(`[${a}] Error, please try again!\n`);
                 }
             } catch (error) {
                 console.log(`[${a}] ${error.message}\n`)
