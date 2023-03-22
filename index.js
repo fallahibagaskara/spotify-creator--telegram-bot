@@ -61,7 +61,7 @@ bot.on(/^\/spotifybulk (.+)$/, (msg, props) => {
                 
                 console.log(`[${a}] Registering ${email} | ${password}`);
                 const cacah = email.split("@");
-                const createspotify = await spotify(`birth_day=11&name=${cacah[0]}&gender=neutral&birth_year=1995&platform=Android-ARM&email=${email}&creation_point=client_mobile&password=${password}&password_repeat=${password}&iagree=true&birth_month=4&key=142b583129b2df829de3656f9eb484e6`);
+                const createspotify = await spotify(`birth_day=11&name=${cacah[0]}&gender=neutral&birth_year=1995&platform=Android-ARM&email=${email}&creation_point=client_mobile&password=${password}&password_repeat=${password}&iagree=true&birth_month=4&key=a2d4b979dc624757b4fb47de483f3505`);
                 if (createspotify.status == 1) {
                     console.log(`[${a}] Account created successfully!`);
                     msg.reply.text(`[${a}] Success! ${email} | ${password}`);
