@@ -66,16 +66,16 @@ bot.on(/^\/spotifybulk (.+)$/, (msg, props) => {
                     console.log(`[${a}] Account created successfully!`);
                     msg.reply.text(`[${a}] Success! ${email} | ${password}`);
 
-                    fs.appendFileSync('Account_Created.txt', `${email} | ${password}\n`);
-
+                    // fs.appendFileSync('Account_Created.txt', `${email} | ${password}\n`);
+                    if (a == jumlah) {
+                        msg.reply.text(`Done, ${jumlah} Spotify account created successfully!`);
+                        break;
+                    }
                     for (i = 0; i < 5; i++) {
                             await delay(2000);
                             break;
                         }
-                        if (a == jumlah) {
-                            msg.reply.text(`Done, ${jumlah} Spotify account created successfully!`);
-                            break;
-                        }
+
                 } else {
                     console.log(`[${a}] ${createspotify} \n`);
                 }
