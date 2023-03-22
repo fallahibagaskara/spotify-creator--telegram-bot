@@ -55,7 +55,7 @@ bot.on(/^\/spotifybulk (.+)$/, (msg, props) => {
             try {
                 a++;
                 
-                var email = `${randstr(5)}@indomilk.me`; // change domain here
+                var email = `${randstr(5)}@ssssaasasa.me`; // change domain here
                 // var password = `${randstr(8)}`; // change password here
                 var password = "masukajaya"; // change password here
                 
@@ -77,7 +77,7 @@ bot.on(/^\/spotifybulk (.+)$/, (msg, props) => {
                             break;
                         }
                 } else {
-                    console.log(`[${a}] Error, please try again!\n`);
+                    console.log(`[${a}] createspotify.status \n`);
                 }
             } catch (error) {
                 console.log(`[${a}] ${error.message}\n`)
