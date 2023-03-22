@@ -77,7 +77,7 @@ bot.on(/^\/spotifybulk (.+)$/, (msg, props) => {
                         }
 
                 } else {
-                    console.log(`[${a}] ${createspotify} \n`);
+                    console.log(`[${a}] ${JSON.stringify(createspotify)} \n`);
                 }
             } catch (error) {
                 console.log(`[${a}] ${error.message}\n`)
